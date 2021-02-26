@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Countrys of the world</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script type="text/javascript">
+            function type_text(value1){
+                document.getElementById("result_list").innerHTML= "";
+                if(value1.length>=3){
+                    var request = "https://restcountries.eu/rest/v2/name/"+value1;
+                    fetch(request)
+                    .then(function(response) {
+                        return response.json();
+                    }).then(function(result) {
+                        var salida = "";
+                        if(!result["status"]){
+                            for (const prop in result) {
+                                salida += `<div id=lista> ${result[prop]["name"]}</div><br/>`
+                            }
+                        }else{
+                            salida = "<div id=lista>Ups! Not found results. </div>";
+                        }
+                        document.getElementById("result_list").innerHTML= salida;
+                    })
+                }
+            }
+            function show_result(){
+                document.getElementById("out_search").innerHTML= "";
+                var variable = document.getElementById("search").value;
+                var request = "https://restcountries.eu/rest/v2/name/"+variable;
+                fetch(request)
+                    .then(function(response) {
+                        return response.json();
+                    }).then(function(result) {
+                        var out_search = lenguage = money = "";
+                        console.log(result)
+                        if(!result["status"]){
+                            for (const prop in result) {
+                                for(const propl in result[prop]["languages"]){
+                                    lenguage += result[prop]["languages"][propl]["name"];
+                                }
+                                for(const prop2 in result[prop]["currencies"]){
+                                    money += result[prop]["currencies"][prop2]["name"];
+                                }
+                                out_search += `<div id=out_list>
+                                        <ul id="list_country">
+                                            <li> Pa&iacute;s ${result[prop]["name"]} </li> 
+                                            <li> Region ${result[prop]["region"]} </li>
+                                            <li> Moneda: ${money} </li>
+                                            <li> Idioma: ${lenguage} </li>
+                                            <li> Poblaci&oacute;n: ${result[prop]["population"]} </li>
+                                        </ul>
+                                    </div><br/>`
+                            }
+                        }else{
+                            out_search = "<div id=out_list_error>Ups! Not found results. </div>";
+                        }
+                        document.getElementById("out_search").innerHTML= out_search;
+                    })
+            }
+        </script>
+    </head>
+    <body>
+        <div id="form">
+            <form method="POST" name="form_search" id="form_search">
+                <input type="text" placeholder="Search country..." id="search" onkeyup="type_text(this.value);" /><br/><br/>
+                <input type="button" id="button_search" value="Buscar..." onclick="show_result();"/>
+            </form>
+        </div><br/><br/>
+        <div id="result_list">
+        </div>
+        <div id="out_search"></div>
+    </body>
+</html>
