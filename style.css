@@ -1,0 +1,88 @@
+/* Estilos por id */
+#general{
+    width: 90%;
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 3%;
+    max-height: 600px;
+    overflow-y: auto;
+}
+#div_left{
+    width: 45%;
+    float: left;
+}
+#div_right{
+    width: 54%;
+    float: right;
+}
+#result_list{
+    width: 100%;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-color: #CB4335;
+    border-radius: 4px;
+}
+#lista{
+    width: 100%;
+    border-bottom: 1px solid;
+    border-bottom-color: #CB4335;
+}
+#out_search{
+    width: 100%;
+    border-radius: 4px;
+}
+#out_list{
+    width: 100%;
+    border: inset;
+}
+#list_country{
+    margin-right: 2%;
+    margin-left: 1%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+#separador{
+    border-bottom: 1px solid;
+    border-bottom-color: #1F618D;
+}
+#out_list_error{
+    width: 100%;
+    border: inset;
+}
+/* Estilos por tipo de etiqueta */
+legend {
+    display: block;
+    padding-left: 2px;
+    padding-right: 2px;
+    border: none;
+    font-size: 40px;
+}
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=button] {
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+footer {
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height: 25px;
+    text-align: right;
+    background-color: white;
+}
