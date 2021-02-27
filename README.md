@@ -7,8 +7,11 @@ To begin using this template, choose one of the following options to get started
 
 ## Usage
 
-Download the project through the github repository once downloaded open the index.html file in the browser and search by country.
-There are tree files within the project, the javascript functions to dynamically perform the search, the css file for the styles of our template and the html file that shows us the template in which our form and search result are found.
+* Download the project using the command - git clone - followed by the url of the project in a folder, open the 
+    index.html file in the browser and search by country.
+* Download the project through the github repository once downloaded open the index.html file in the browser and search 
+    by country.
+There are three files within the project, the javascript functions to dynamically perform the search, the css file for the styles of our template and the html file that shows us the template in which our form and search result are found.
 
 ## About
 
